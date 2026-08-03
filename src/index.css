@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background-color: #F2ECD8;
+  color: #1B1B18;
+  font-family: 'Inter', sans-serif;
+  font-variant-numeric: tabular-nums;
+  overscroll-behavior-y: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #E3A72E;
+  outline-offset: 2px;
+}
+
+/* Perforated ticket-edge divider, used to separate the app bar from content */
+.ticket-edge {
+  position: relative;
+  height: 10px;
+  background: #1F4D3D;
+}
+.ticket-edge::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 10px;
+  background-image: radial-gradient(circle at 8px 0, transparent 6px, #F2ECD8 6.5px);
+  background-size: 16px 10px;
+  background-repeat: repeat-x;
+}
+
+/* Scrollbar - subtle */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #D8D2C0; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Stagger fade-in for list items */
+.stagger-item {
+  animation: fade-in 0.3s ease-out backwards;
+}
