@@ -2,6 +2,7 @@ import { api } from "./client";
 
 export const usuariosApi = {
   listar: () => api.get("/usuarios/listar").then((r) => r.data),
+  listarDesactivados: () => api.get("/usuarios/listar-desactivos").then((r) => r.data),
   buscarId: (id) => api.get(`/usuarios/${id}`).then((r) => r.data),
   buscarUsuario: (usuario) => api.get("/usuarios/buscar", { params: { usuario } }).then((r) => r.data),
   registrar: (usuario) => api.post("/usuarios", usuario).then((r) => r.data),

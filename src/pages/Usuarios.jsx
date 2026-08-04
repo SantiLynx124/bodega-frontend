@@ -14,6 +14,7 @@ import { useAuth } from "../context/AuthContext";
 export default function Usuarios() {
   const toast = useToast();
   const { usuario: yo } = useAuth();
+  const [tab, setTab] = useState("activos"); // "activos" | "desactivados"
   const [usuarios, setUsuarios] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [busqueda, setBusqueda] = useState("");
@@ -29,15 +30,16 @@ export default function Usuarios() {
   const cargar = useCallback(async () => {
     setCargando(true);
     try {
-      setUsuarios(await usuariosApi.listar());
+      setUsuarios(tab === "activos" ? await usuariosApi.listar() : await usuariosApi.listarDesactivados());
     } catch (err) {
       toast.error(extraerMensajeError(err));
     } finally {
       setCargando(false);
     }
-  }, [toast]);
+  }, [toast, tab]);
 
   useEffect(() => {
+    setBusqueda("");
     cargar();
   }, [cargar]);
 
@@ -139,7 +141,10 @@ export default function Usuarios() {
 
   return (
     <div className="min-h-[100dvh] bg-paper pb-24">
-      <TopBar titulo="Usuarios" subtitulo={`${usuarios.length} activos`} />
+      <TopBar
+        titulo="Usuarios"
+        subtitulo={`${usuarios.length} ${tab === "activos" ? "activos" : "desactivados"}`}
+      />
 
       <div className="px-4 pt-4">
         <div className="relative">
@@ -150,6 +155,23 @@ export default function Usuarios() {
             placeholder="Buscar por nombre o usuario..."
             className="pl-9"
           />
+        </div>
+
+        <div className="flex gap-1.5 mt-3 bg-paper-dark rounded-tag p-1">
+          {[
+            { id: "activos", label: "Activos" },
+            { id: "desactivados", label: "Desactivados" },
+          ].map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setTab(t.id)}
+              className={`flex-1 rounded-tag py-1.5 text-sm font-body font-semibold transition-colors ${
+                tab === t.id ? "bg-paper-card text-ink shadow-card" : "text-ink-soft"
+              }`}
+            >
+              {t.label}
+            </button>
+          ))}
         </div>
       </div>
 

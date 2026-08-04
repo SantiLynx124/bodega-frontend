@@ -2,6 +2,7 @@ import { api } from "./client";
 
 export const productosApi = {
   listar: () => api.get("/productos/listar").then((r) => r.data),
+  listarDesactivados: () => api.get("/productos/listar-desactivados").then((r) => r.data),
   buscarNombre: (nombre) => api.get("/productos/buscar", { params: { nombre } }).then((r) => r.data),
   buscarId: (id) => api.get(`/productos/${id}`).then((r) => r.data),
   registrar: (producto) => api.post("/productos", producto).then((r) => r.data),

@@ -1,9 +1,9 @@
 import { useEffect, useState, useCallback } from "react";
-import { Plus, Search, X, PackageSearch } from "lucide-react";
+import { Plus, Search, X, Pencil } from "lucide-react";
 import TopBar from "../components/TopBar";
 import ProductoCard from "../components/ProductoCard";
 import ProductoForm from "../components/ProductoForm";
-import AjusteStock from "../components/AjusteStock";
+import ProductoDetalle from "../components/ProductoDetalle";
 import BottomSheet from "../components/BottomSheet";
 import ConfirmDialog from "../components/ConfirmDialog";
 import { Boton, Input } from "../components/Field";
@@ -13,33 +13,36 @@ import { useToast } from "../context/ToastContext";
 
 export default function Productos() {
   const toast = useToast();
+  const [tab, setTab] = useState("activos"); // "activos" | "desactivados"
   const [productos, setProductos] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [busqueda, setBusqueda] = useState("");
   const [sheetCrear, setSheetCrear] = useState(false);
   const [productoActivo, setProductoActivo] = useState(null);
+  const [modoEdicion, setModoEdicion] = useState(false);
   const [guardando, setGuardando] = useState(false);
   const [confirmacion, setConfirmacion] = useState(null);
-  const [buscarIdAbierto, setBuscarIdAbierto] = useState(false);
-  const [idBuscado, setIdBuscado] = useState("");
 
   const cargar = useCallback(async () => {
     setCargando(true);
     try {
-      const data = await productosApi.listar();
+      const data = tab === "activos" ? await productosApi.listar() : await productosApi.listarDesactivados();
       setProductos(data);
     } catch (err) {
       toast.error(extraerMensajeError(err));
     } finally {
       setCargando(false);
     }
-  }, [toast]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [toast, tab]);
 
   useEffect(() => {
+    setBusqueda("");
     cargar();
   }, [cargar]);
 
   useEffect(() => {
+    if (tab !== "activos") return; // la búsqueda por nombre del backend solo cubre activos
     const t = setTimeout(async () => {
       if (!busqueda.trim()) return cargar();
       try {
@@ -53,18 +56,38 @@ export default function Productos() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [busqueda]);
 
+  const visibles =
+    tab === "desactivados" && busqueda.trim()
+      ? productos.filter(
+          (p) =>
+            p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+            p.marca.toLowerCase().includes(busqueda.toLowerCase())
+        )
+      : productos;
+
+  function abrirProducto(p) {
+    setProductoActivo(p);
+    setModoEdicion(false);
+  }
+
+  function cerrarSheetDetalle() {
+    setProductoActivo(null);
+    setModoEdicion(false);
+  }
+
   async function guardarProducto(datos) {
     setGuardando(true);
     try {
       if (productoActivo?.id) {
-        await productosApi.actualizar(productoActivo.id, datos);
+        const actualizado = await productosApi.actualizar(productoActivo.id, datos);
         toast.exito("Producto actualizado");
+        setProductoActivo(actualizado);
+        setModoEdicion(false);
       } else {
         await productosApi.registrar(datos);
         toast.exito("Producto registrado");
+        setSheetCrear(false);
       }
-      setSheetCrear(false);
-      setProductoActivo(null);
       cargar();
     } catch (err) {
       toast.error(extraerMensajeError(err));
@@ -98,20 +121,8 @@ export default function Productos() {
         toast.exito(`${p.nombre} activado`);
       }
       setConfirmacion(null);
-      setProductoActivo(null);
+      cerrarSheetDetalle();
       cargar();
-    } catch (err) {
-      toast.error(extraerMensajeError(err));
-    }
-  }
-
-  async function buscarPorId() {
-    if (!idBuscado.trim()) return;
-    try {
-      const p = await productosApi.buscarId(idBuscado.trim());
-      setBuscarIdAbierto(false);
-      setIdBuscado("");
-      setProductoActivo(p);
     } catch (err) {
       toast.error(extraerMensajeError(err));
     }
@@ -121,17 +132,15 @@ export default function Productos() {
     <div className="min-h-[100dvh] bg-paper pb-24">
       <TopBar
         titulo="Productos"
-        subtitulo={`${productos.length} ${productos.length === 1 ? "producto activo" : "productos activos"}`}
-        accion={
-          <button
-            onClick={() => setBuscarIdAbierto(true)}
-            className="text-paper/80 hover:text-paper p-1"
-            aria-label="Buscar producto desactivado por ID"
-            title="Buscar por ID (incluye desactivados)"
-          >
-            <PackageSearch size={20} />
-          </button>
-        }
+        subtitulo={`${productos.length} ${
+          tab === "activos"
+            ? productos.length === 1
+              ? "producto activo"
+              : "productos activos"
+            : productos.length === 1
+            ? "producto desactivado"
+            : "productos desactivados"
+        }`}
       />
 
       <div className="px-4 pt-4">
@@ -153,6 +162,23 @@ export default function Productos() {
             </button>
           )}
         </div>
+
+        <div className="flex gap-1.5 mt-3 bg-paper-dark rounded-tag p-1">
+          {[
+            { id: "activos", label: "Activos" },
+            { id: "desactivados", label: "Desactivados" },
+          ].map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setTab(t.id)}
+              className={`flex-1 rounded-tag py-1.5 text-sm font-body font-semibold transition-colors ${
+                tab === t.id ? "bg-paper-card text-ink shadow-card" : "text-ink-soft"
+              }`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="px-4 mt-4 flex flex-col gap-2.5">
@@ -160,17 +186,19 @@ export default function Productos() {
           [...Array(4)].map((_, i) => (
             <div key={i} className="h-[74px] rounded-tag bg-paper-dark animate-pulse" />
           ))
-        ) : productos.length === 0 ? (
+        ) : visibles.length === 0 ? (
           <div className="text-center py-16">
             <p className="font-display font-semibold text-ink mb-1">Nada por aquí</p>
             <p className="text-sm text-ink-soft font-body">
-              {busqueda ? "No hay productos que coincidan con tu búsqueda." : "Registra tu primer producto con el botón +."}
+              {busqueda
+                ? "No hay productos que coincidan con tu búsqueda."
+                : tab === "activos"
+                ? "Registra tu primer producto con el botón +."
+                : "No hay productos desactivados."}
             </p>
           </div>
         ) : (
-          productos.map((p, i) => (
-            <ProductoCard key={p.id} producto={p} index={i} onAbrir={setProductoActivo} />
-          ))
+          visibles.map((p, i) => <ProductoCard key={p.id} producto={p} index={i} onAbrir={abrirProducto} />)
         )}
       </div>
 
@@ -190,47 +218,42 @@ export default function Productos() {
       {/* Detalle / editar producto */}
       <BottomSheet
         abierto={!!productoActivo}
-        onClose={() => setProductoActivo(null)}
+        onClose={cerrarSheetDetalle}
         titulo={productoActivo?.nombre || "Producto"}
-      >
-        {productoActivo && (
-          <div className="flex flex-col gap-4">
-            <AjusteStock
-              unidadMetrica={productoActivo.unidadMetrica}
-              onAjustar={ajustarStock}
-            />
-            <ProductoForm
-              inicial={productoActivo}
-              onGuardar={guardarProducto}
-              onCancelar={() => setProductoActivo(null)}
-              guardando={guardando}
-            />
-            <Boton
-              variante={productoActivo.estado ? "peligro" : "primario"}
-              onClick={() => setConfirmacion({ producto: productoActivo })}
-              className="w-full"
+        etiquetaEsquina={productoActivo ? `ID ${productoActivo.id}` : null}
+        accionExtra={
+          productoActivo && !modoEdicion ? (
+            <button
+              onClick={() => setModoEdicion(true)}
+              className="p-1.5 rounded-full text-ink-soft hover:bg-stone/60 transition-colors"
+              aria-label="Editar producto"
+              title="Editar producto"
             >
-              {productoActivo.estado ? "Desactivar producto" : "Activar producto"}
-            </Boton>
-          </div>
-        )}
-      </BottomSheet>
-
-      {/* Buscar por ID (incluye desactivados) */}
-      <BottomSheet abierto={buscarIdAbierto} onClose={() => setBuscarIdAbierto(false)} titulo="Buscar por ID">
-        <p className="text-sm text-ink-soft font-body mb-3">
-          El listado y la búsqueda solo muestran productos activos. Usa esto para encontrar un producto
-          desactivado y reactivarlo.
-        </p>
-        <div className="flex gap-2">
-          <Input
-            value={idBuscado}
-            onChange={(e) => setIdBuscado(e.target.value)}
-            placeholder="ID del producto"
-            inputMode="numeric"
-          />
-          <Boton onClick={buscarPorId}>Buscar</Boton>
-        </div>
+              <Pencil size={18} />
+            </button>
+          ) : null
+        }
+      >
+        {productoActivo &&
+          (modoEdicion ? (
+            <div className="flex flex-col gap-4">
+              <ProductoForm
+                inicial={productoActivo}
+                onGuardar={guardarProducto}
+                onCancelar={() => setModoEdicion(false)}
+                guardando={guardando}
+              />
+              <Boton
+                variante={productoActivo.estado ? "peligro" : "primario"}
+                onClick={() => setConfirmacion({ producto: productoActivo })}
+                className="w-full"
+              >
+                {productoActivo.estado ? "Desactivar producto" : "Activar producto"}
+              </Boton>
+            </div>
+          ) : (
+            <ProductoDetalle producto={productoActivo} onAjustar={ajustarStock} />
+          ))}
       </BottomSheet>
 
       <ConfirmDialog

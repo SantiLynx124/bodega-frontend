@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Package, Users, CircleUser } from "lucide-react";
+import { Package, ShoppingCart, Users, CircleUser } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 
 const itemBase =
@@ -23,6 +23,20 @@ export default function BottomNav() {
           <>
             <Package size={22} strokeWidth={isActive ? 2.4 : 1.8} />
             Productos
+          </>
+        )}
+      </NavLink>
+
+      <NavLink
+        to="/ventas"
+        className={({ isActive }) =>
+          `${itemBase} ${isActive ? "text-awning" : "text-ink-soft/60"}`
+        }
+      >
+        {({ isActive }) => (
+          <>
+            <ShoppingCart size={22} strokeWidth={isActive ? 2.4 : 1.8} />
+            Ventas
           </>
         )}
       </NavLink>

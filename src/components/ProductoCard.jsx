@@ -10,14 +10,17 @@ function nivelStock(stock) {
 export default function ProductoCard({ producto, onAbrir, index = 0 }) {
   const nivel = nivelStock(producto.stock);
   const unidad = producto.unidadMetrica === "KILOGRAMO" ? "kg" : "u.";
+  const desactivado = !producto.estado;
 
   return (
     <button
       onClick={() => onAbrir(producto)}
       style={{ animationDelay: `${Math.min(index, 8) * 30}ms` }}
-      className="stagger-item w-full flex items-stretch bg-paper-card rounded-tag shadow-card overflow-hidden text-left active:scale-[0.99] transition-transform"
+      className={`stagger-item w-full flex items-stretch bg-paper-card rounded-tag shadow-card overflow-hidden text-left active:scale-[0.99] transition-transform ${
+        desactivado ? "opacity-60" : ""
+      }`}
     >
-      <div className={`w-1.5 shrink-0 ${nivel.color}`} aria-hidden />
+      <div className={`w-1.5 shrink-0 ${desactivado ? "bg-ink-soft" : nivel.color}`} aria-hidden />
       <div className="flex-1 px-3.5 py-3 min-w-0">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
@@ -29,7 +32,9 @@ export default function ProductoCard({ producto, onAbrir, index = 0 }) {
           </p>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <span className="text-[11px] font-body text-ink-soft">{nivel.texto}</span>
+          <span className="text-[11px] font-body text-ink-soft">
+            {desactivado ? "Desactivado" : nivel.texto}
+          </span>
           <span className="font-mono text-xs text-ink-soft">
             {Number(producto.stock).toFixed(producto.unidadMetrica === "KILOGRAMO" ? 2 : 0)} {unidad}
           </span>
