@@ -1,0 +1,2006 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  apple-touch-icon.png
+  favicon.svg
+  icon-192.png
+  icon-512.png
+  icons.svg
+  maskable-512.png
+  tag-icon.svg
+src/
+  api/
+    client.js
+    productos.js
+    usuarios.js
+  assets/
+    hero.png
+    vite.svg
+  components/
+    AjusteStock.jsx
+    BottomNav.jsx
+    BottomSheet.jsx
+    ConfirmDialog.jsx
+    Field.jsx
+    Layout.jsx
+    ProductoCard.jsx
+    ProductoForm.jsx
+    RutasProtegidas.jsx
+    TopBar.jsx
+    UsuarioCard.jsx
+    UsuarioForm.jsx
+  context/
+    AuthContext.jsx
+    ToastContext.jsx
+  pages/
+    Login.jsx
+    Perfil.jsx
+    Productos.jsx
+    Usuarios.jsx
+  utils/
+    jwt.js
+  App.jsx
+  index.css
+  main.jsx
+.env.example
+.gitignore
+.oxlintrc.json
+index.html
+package.json
+postcss.config.js
+README.md
+tailwind.config.js
+vercel.json
+vite.config.js
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="public/icons.svg">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+</file>
+
+<file path="public/tag-icon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path d="M4 4h14l10 10-14 14L4 18z" fill="#1F4D3D"/>
+  <circle cx="11" cy="11" r="2.4" fill="#F2ECD8"/>
+</svg>
+</file>
+
+<file path="src/api/client.js">
+import axios from "axios";
+
+// La URL del backend se define por variable de entorno.
+// En local (XAMPP + Spring Boot corriendo en tu PC): http://localhost:8080
+// Cuando migres a Oracle Cloud, solo cambia VITE_API_URL en Vercel
+// (Project Settings -> Environment Variables) y vuelve a desplegar.
+const baseURL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+
+export const api = axios.create({
+  baseURL,
+  headers: { "Content-Type": "application/json" },
+});
+
+const TOKEN_KEY = "bodega_token";
+
+export function getToken() {
+  return localStorage.getItem(TOKEN_KEY);
+}
+
+export function setToken(token) {
+  localStorage.setItem(TOKEN_KEY, token);
+}
+
+export function clearToken() {
+  localStorage.removeItem(TOKEN_KEY);
+}
+
+api.interceptors.request.use((config) => {
+  const token = getToken();
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+// Extrae un mensaje de error legible de la respuesta del backend.
+// El GlobalExceptionHandler de Spring a veces responde con texto plano
+// y a veces con un mapa { campo: mensaje } para errores de validación.
+export function extraerMensajeError(error) {
+  if (!error?.response) {
+    return "No se pudo conectar con el servidor. Verifica que el backend esté encendido y accesible.";
+  }
+  const { data, status } = error.response;
+  if (typeof data === "string" && data.trim()) return data;
+  if (data && typeof data === "object") {
+    const valores = Object.values(data);
+    if (valores.length) return valores.join(" · ");
+  }
+  if (status === 401) return "Sesión inválida o expirada. Vuelve a iniciar sesión.";
+  if (status === 403) return "No tienes permiso para realizar esta acción.";
+  return "Ocurrió un error inesperado.";
+}
+
+let onUnauthorized = null;
+export function registerUnauthorizedHandler(fn) {
+  onUnauthorized = fn;
+}
+
+api.interceptors.response.use(
+  (res) => res,
+  (error) => {
+    if (error?.response?.status === 401 && onUnauthorized) {
+      onUnauthorized();
+    }
+    return Promise.reject(error);
+  }
+);
+</file>
+
+<file path="src/api/productos.js">
+import { api } from "./client";
+
+export const productosApi = {
+  listar: () => api.get("/productos/listar").then((r) => r.data),
+  buscarNombre: (nombre) => api.get("/productos/buscar", { params: { nombre } }).then((r) => r.data),
+  buscarId: (id) => api.get(`/productos/${id}`).then((r) => r.data),
+  registrar: (producto) => api.post("/productos", producto).then((r) => r.data),
+  actualizar: (id, producto) => api.put(`/productos/${id}`, producto).then((r) => r.data),
+  activar: (id) => api.patch(`/productos/${id}/activar`).then((r) => r.data),
+  desactivar: (id) => api.patch(`/productos/${id}/desactivar`).then((r) => r.data),
+  aumentarStock: (id, cantidad) =>
+    api.patch(`/productos/${id}/aumentar-stock`, null, { params: { cantidad } }).then((r) => r.data),
+  disminuirStock: (id, cantidad) =>
+    api.patch(`/productos/${id}/disminuir-stock`, null, { params: { cantidad } }).then((r) => r.data),
+};
+</file>
+
+<file path="src/api/usuarios.js">
+import { api } from "./client";
+
+export const usuariosApi = {
+  listar: () => api.get("/usuarios/listar").then((r) => r.data),
+  buscarId: (id) => api.get(`/usuarios/${id}`).then((r) => r.data),
+  buscarUsuario: (usuario) => api.get("/usuarios/buscar", { params: { usuario } }).then((r) => r.data),
+  registrar: (usuario) => api.post("/usuarios", usuario).then((r) => r.data),
+  actualizar: (id, usuario) => api.put(`/usuarios/${id}`, usuario).then((r) => r.data),
+  activar: (id) => api.patch(`/usuarios/${id}/activar`).then((r) => r.data),
+  desactivar: (id) => api.patch(`/usuarios/${id}/desactivar`).then((r) => r.data),
+  cambiarPassword: (id, password) => api.patch(`/usuarios/${id}/password`, { password }).then((r) => r.data),
+  cambiarUsuario: (id, usuario) => api.patch(`/usuarios/${id}/usuario`, { usuario }).then((r) => r.data),
+  cambiarMiPassword: (password) => api.patch("/usuarios/me/contrase%C3%B1a", { password }).then((r) => r.data),
+  cambiarMiUsuario: (usuario) => api.patch("/usuarios/me/usuario", { usuario }).then((r) => r.data),
+};
+</file>
+
+<file path="src/assets/vite.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="src/components/AjusteStock.jsx">
+import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
+import { Boton } from "./Field";
+
+export default function AjusteStock({ unidadMetrica, onAjustar, procesando }) {
+  const [cantidad, setCantidad] = useState("");
+  const paso = unidadMetrica === "KILOGRAMO" ? "0.01" : "1";
+
+  function ejecutar(tipo) {
+    const n = Number(cantidad);
+    if (!cantidad || n <= 0) return;
+    onAjustar(tipo, n);
+    setCantidad("");
+  }
+
+  return (
+    <div className="bg-paper rounded-tag border border-stone p-3">
+      <p className="text-xs font-body font-semibold uppercase tracking-wide text-ink-soft mb-2">
+        Movimiento de stock
+      </p>
+      <div className="flex gap-2">
+        <input
+          type="number"
+          inputMode="decimal"
+          min="0"
+          step={paso}
+          value={cantidad}
+          onChange={(e) => setCantidad(e.target.value)}
+          placeholder="Cantidad"
+          className="flex-1 min-w-0 rounded-tag border border-stone bg-white px-3 py-2 text-[15px] font-mono text-ink focus:border-awning focus:ring-1 focus:ring-awning outline-none"
+        />
+        <Boton
+          type="button"
+          variante="secundario"
+          disabled={procesando}
+          onClick={() => ejecutar("disminuir")}
+          aria-label="Disminuir stock"
+        >
+          <Minus size={16} />
+        </Boton>
+        <Boton
+          type="button"
+          disabled={procesando}
+          onClick={() => ejecutar("aumentar")}
+          aria-label="Aumentar stock"
+        >
+          <Plus size={16} />
+        </Boton>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/BottomNav.jsx">
+import { NavLink } from "react-router-dom";
+import { Package, Users, CircleUser } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
+
+const itemBase =
+  "flex flex-col items-center justify-center gap-1 flex-1 py-2 text-[11px] font-body font-medium transition-colors";
+
+export default function BottomNav() {
+  const { esAdmin } = useAuth();
+
+  return (
+    <nav
+      className="fixed bottom-0 left-0 right-0 z-30 bg-paper-card border-t border-stone flex pb-[env(safe-area-inset-bottom)]"
+      aria-label="Navegación principal"
+    >
+      <NavLink
+        to="/productos"
+        className={({ isActive }) =>
+          `${itemBase} ${isActive ? "text-awning" : "text-ink-soft/60"}`
+        }
+      >
+        {({ isActive }) => (
+          <>
+            <Package size={22} strokeWidth={isActive ? 2.4 : 1.8} />
+            Productos
+          </>
+        )}
+      </NavLink>
+
+      {esAdmin && (
+        <NavLink
+          to="/usuarios"
+          className={({ isActive }) =>
+            `${itemBase} ${isActive ? "text-awning" : "text-ink-soft/60"}`
+          }
+        >
+          {({ isActive }) => (
+            <>
+              <Users size={22} strokeWidth={isActive ? 2.4 : 1.8} />
+              Usuarios
+            </>
+          )}
+        </NavLink>
+      )}
+
+      <NavLink
+        to="/perfil"
+        className={({ isActive }) =>
+          `${itemBase} ${isActive ? "text-awning" : "text-ink-soft/60"}`
+        }
+      >
+        {({ isActive }) => (
+          <>
+            <CircleUser size={22} strokeWidth={isActive ? 2.4 : 1.8} />
+            Perfil
+          </>
+        )}
+      </NavLink>
+    </nav>
+  );
+}
+</file>
+
+<file path="src/components/BottomSheet.jsx">
+import { useEffect } from "react";
+import { X } from "lucide-react";
+
+export default function BottomSheet({ abierto, onClose, titulo, children }) {
+  useEffect(() => {
+    if (!abierto) return;
+    const onKey = (e) => e.key === "Escape" && onClose();
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [abierto, onClose]);
+
+  if (!abierto) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
+      <button
+        aria-label="Cerrar"
+        onClick={onClose}
+        className="absolute inset-0 bg-ink/50 animate-fade-in"
+      />
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={titulo}
+        className="relative w-full sm:max-w-md bg-paper-card rounded-t-2xl sm:rounded-2xl shadow-sheet max-h-[88vh] overflow-y-auto animate-slide-up pb-[calc(env(safe-area-inset-bottom)+16px)]"
+      >
+        <div className="sticky top-0 bg-paper-card flex items-center justify-between px-5 pt-4 pb-3 border-b border-stone">
+          <div className="mx-auto w-10 h-1.5 rounded-full bg-stone absolute left-1/2 -translate-x-1/2 top-2 sm:hidden" />
+          <h2 className="font-display font-semibold text-lg text-ink mt-2">{titulo}</h2>
+          <button
+            onClick={onClose}
+            className="mt-2 p-1.5 rounded-full text-ink-soft hover:bg-stone/60 transition-colors"
+            aria-label="Cerrar"
+          >
+            <X size={20} />
+          </button>
+        </div>
+        <div className="px-5 py-4">{children}</div>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/ConfirmDialog.jsx">
+import { Boton } from "./Field";
+
+export default function ConfirmDialog({ abierto, titulo, mensaje, onConfirmar, onCancelar, variante = "primario", textoConfirmar = "Confirmar" }) {
+  if (!abierto) return null;
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center px-6">
+      <button aria-label="Cerrar" onClick={onCancelar} className="absolute inset-0 bg-ink/50 animate-fade-in" />
+      <div role="alertdialog" aria-modal="true" className="relative w-full max-w-xs bg-paper-card rounded-2xl shadow-sheet p-5 animate-fade-in">
+        <h3 className="font-display font-semibold text-base text-ink mb-1.5">{titulo}</h3>
+        <p className="text-sm text-ink-soft font-body mb-5">{mensaje}</p>
+        <div className="flex gap-2 justify-end">
+          <Boton variante="fantasma" onClick={onCancelar}>Cancelar</Boton>
+          <Boton variante={variante} onClick={onConfirmar}>{textoConfirmar}</Boton>
+        </div>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/Field.jsx">
+export function Campo({ label, error, children }) {
+  return (
+    <label className="block mb-4">
+      <span className="block text-xs font-body font-semibold uppercase tracking-wide text-ink-soft mb-1.5">
+        {label}
+      </span>
+      {children}
+      {error && <span className="block text-xs text-tag-red mt-1 font-body">{error}</span>}
+    </label>
+  );
+}
+
+const baseInput =
+  "w-full rounded-tag border border-stone bg-white px-3.5 py-2.5 text-[15px] font-body text-ink placeholder:text-ink-soft/40 focus:border-awning focus:ring-1 focus:ring-awning outline-none transition-colors";
+
+export function Input(props) {
+  return <input {...props} className={`${baseInput} ${props.className || ""}`} />;
+}
+
+export function Select(props) {
+  return <select {...props} className={`${baseInput} ${props.className || ""}`} />;
+}
+
+export function Boton({ variante = "primario", className = "", ...props }) {
+  const estilos = {
+    primario: "bg-awning text-paper hover:bg-awning-light active:bg-awning-dark disabled:opacity-50",
+    secundario: "bg-transparent text-awning border border-awning hover:bg-awning/5 disabled:opacity-50",
+    peligro: "bg-tag-red text-paper hover:bg-[#9c3226] disabled:opacity-50",
+    fantasma: "bg-transparent text-ink-soft hover:bg-stone/50 disabled:opacity-50",
+  };
+  return (
+    <button
+      {...props}
+      className={`inline-flex items-center justify-center gap-2 rounded-tag px-4 py-2.5 text-sm font-body font-semibold transition-colors ${estilos[variante]} ${className}`}
+    />
+  );
+}
+</file>
+
+<file path="src/components/Layout.jsx">
+import { Outlet } from "react-router-dom";
+import BottomNav from "./BottomNav";
+
+export default function Layout() {
+  return (
+    <div className="bg-paper min-h-[100dvh]">
+      <Outlet />
+      <BottomNav />
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/ProductoCard.jsx">
+const UMBRAL_BAJO = 5;
+
+function nivelStock(stock) {
+  const n = Number(stock);
+  if (n <= 0) return { color: "bg-tag-red", texto: "Sin stock" };
+  if (n <= UMBRAL_BAJO) return { color: "bg-tag-mustard", texto: "Stock bajo" };
+  return { color: "bg-awning", texto: "En stock" };
+}
+
+export default function ProductoCard({ producto, onAbrir, index = 0 }) {
+  const nivel = nivelStock(producto.stock);
+  const unidad = producto.unidadMetrica === "KILOGRAMO" ? "kg" : "u.";
+
+  return (
+    <button
+      onClick={() => onAbrir(producto)}
+      style={{ animationDelay: `${Math.min(index, 8) * 30}ms` }}
+      className="stagger-item w-full flex items-stretch bg-paper-card rounded-tag shadow-card overflow-hidden text-left active:scale-[0.99] transition-transform"
+    >
+      <div className={`w-1.5 shrink-0 ${nivel.color}`} aria-hidden />
+      <div className="flex-1 px-3.5 py-3 min-w-0">
+        <div className="flex items-start justify-between gap-2">
+          <div className="min-w-0">
+            <p className="font-display font-semibold text-[15px] text-ink truncate">{producto.nombre}</p>
+            <p className="text-xs text-ink-soft font-body truncate">{producto.marca}</p>
+          </div>
+          <p className="font-mono font-semibold text-sm text-awning shrink-0">
+            S/ {Number(producto.precioVenta).toFixed(2)}
+          </p>
+        </div>
+        <div className="flex items-center justify-between mt-2">
+          <span className="text-[11px] font-body text-ink-soft">{nivel.texto}</span>
+          <span className="font-mono text-xs text-ink-soft">
+            {Number(producto.stock).toFixed(producto.unidadMetrica === "KILOGRAMO" ? 2 : 0)} {unidad}
+          </span>
+        </div>
+      </div>
+    </button>
+  );
+}
+</file>
+
+<file path="src/components/ProductoForm.jsx">
+import { useState } from "react";
+import { Campo, Input, Select, Boton } from "./Field";
+
+const vacio = {
+  nombre: "",
+  marca: "",
+  descripcion: "",
+  unidadMetrica: "UNIDAD",
+  precioVenta: "",
+  precioCompra: "",
+  stock: "",
+};
+
+export default function ProductoForm({ inicial, onGuardar, onCancelar, guardando }) {
+  const [form, setForm] = useState(inicial ? { ...vacio, ...inicial } : vacio);
+
+  function set(campo, valor) {
+    setForm((f) => ({ ...f, [campo]: valor }));
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    onGuardar({
+      ...form,
+      precioVenta: Number(form.precioVenta),
+      precioCompra: form.precioCompra === "" ? null : Number(form.precioCompra),
+      stock: Number(form.stock),
+    });
+  }
+
+  return (
+    <form onSubmit={onSubmit}>
+      <Campo label="Nombre">
+        <Input value={form.nombre} onChange={(e) => set("nombre", e.target.value)} required maxLength={100} />
+      </Campo>
+      <Campo label="Marca">
+        <Input value={form.marca} onChange={(e) => set("marca", e.target.value)} required maxLength={100} />
+      </Campo>
+      <Campo label="Descripción (opcional)">
+        <Input value={form.descripcion || ""} onChange={(e) => set("descripcion", e.target.value)} maxLength={255} />
+      </Campo>
+      <Campo label="Unidad de medida">
+        <Select value={form.unidadMetrica} onChange={(e) => set("unidadMetrica", e.target.value)}>
+          <option value="UNIDAD">Por unidad</option>
+          <option value="KILOGRAMO">Por kilogramo</option>
+        </Select>
+      </Campo>
+      <div className="grid grid-cols-2 gap-3">
+        <Campo label="Precio venta (S/)">
+          <Input
+            type="number"
+            inputMode="decimal"
+            step="0.01"
+            min="0"
+            value={form.precioVenta}
+            onChange={(e) => set("precioVenta", e.target.value)}
+            required
+          />
+        </Campo>
+        <Campo label="Precio compra (S/)">
+          <Input
+            type="number"
+            inputMode="decimal"
+            step="0.01"
+            min="0"
+            value={form.precioCompra ?? ""}
+            onChange={(e) => set("precioCompra", e.target.value)}
+            placeholder="Opcional"
+          />
+        </Campo>
+      </div>
+      <Campo label={`Stock inicial ${form.unidadMetrica === "KILOGRAMO" ? "(kg)" : "(unidades)"}`}>
+        <Input
+          type="number"
+          inputMode="decimal"
+          step={form.unidadMetrica === "KILOGRAMO" ? "0.01" : "1"}
+          min="0"
+          value={form.stock}
+          onChange={(e) => set("stock", e.target.value)}
+          required
+        />
+      </Campo>
+
+      <div className="flex gap-2 mt-2">
+        <Boton type="button" variante="fantasma" onClick={onCancelar} className="flex-1">
+          Cancelar
+        </Boton>
+        <Boton type="submit" disabled={guardando} className="flex-1">
+          {guardando ? "Guardando..." : "Guardar"}
+        </Boton>
+      </div>
+    </form>
+  );
+}
+</file>
+
+<file path="src/components/RutasProtegidas.jsx">
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+
+export function RutaPrivada() {
+  const { usuario } = useAuth();
+  if (!usuario) return <Navigate to="/login" replace />;
+  return <Outlet />;
+}
+
+export function RutaAdmin() {
+  const { esAdmin } = useAuth();
+  if (!esAdmin) return <Navigate to="/productos" replace />;
+  return <Outlet />;
+}
+</file>
+
+<file path="src/components/TopBar.jsx">
+export default function TopBar({ titulo, subtitulo, accion }) {
+  return (
+    <header className="sticky top-0 z-30">
+      <div className="bg-awning text-paper px-4 pt-[calc(env(safe-area-inset-top)+14px)] pb-4 flex items-center justify-between">
+        <div>
+          <h1 className="font-display font-bold text-xl leading-tight tracking-tight">{titulo}</h1>
+          {subtitulo && <p className="text-paper/70 text-xs font-body mt-0.5">{subtitulo}</p>}
+        </div>
+        {accion}
+      </div>
+      <div className="ticket-edge" />
+    </header>
+  );
+}
+</file>
+
+<file path="src/components/UsuarioCard.jsx">
+const rolEtiqueta = {
+  ADMINISTRADOR: { texto: "Administrador", color: "bg-tag-red" },
+  VENDEDOR: { texto: "Vendedor", color: "bg-awning" },
+};
+
+export default function UsuarioCard({ usuario, onAbrir, index = 0 }) {
+  const rol = rolEtiqueta[usuario.rol] || { texto: usuario.rol, color: "bg-ink-soft" };
+  return (
+    <button
+      onClick={() => onAbrir(usuario)}
+      style={{ animationDelay: `${Math.min(index, 8) * 30}ms` }}
+      className="stagger-item w-full flex items-center gap-3 bg-paper-card rounded-tag shadow-card px-3.5 py-3 text-left active:scale-[0.99] transition-transform"
+    >
+      <div className="w-10 h-10 rounded-full bg-awning/10 text-awning flex items-center justify-center font-display font-bold shrink-0">
+        {usuario.nombre?.[0]?.toUpperCase() || "?"}
+      </div>
+      <div className="min-w-0 flex-1">
+        <p className="font-display font-semibold text-[15px] text-ink truncate">{usuario.nombre}</p>
+        <p className="text-xs text-ink-soft font-body truncate">@{usuario.usuario}</p>
+      </div>
+      <span className={`text-[10px] font-body font-semibold uppercase tracking-wide text-paper px-2 py-1 rounded-tag shrink-0 ${rol.color}`}>
+        {rol.texto}
+      </span>
+    </button>
+  );
+}
+</file>
+
+<file path="src/components/UsuarioForm.jsx">
+import { useState } from "react";
+import { Campo, Input, Select, Boton } from "./Field";
+
+export default function UsuarioForm({ onGuardar, onCancelar, guardando }) {
+  const [form, setForm] = useState({ nombre: "", usuario: "", password: "", rol: "VENDEDOR" });
+
+  function set(campo, valor) {
+    setForm((f) => ({ ...f, [campo]: valor }));
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    onGuardar(form);
+  }
+
+  return (
+    <form onSubmit={onSubmit}>
+      <Campo label="Nombre completo">
+        <Input value={form.nombre} onChange={(e) => set("nombre", e.target.value)} required maxLength={100} />
+      </Campo>
+      <Campo label="Usuario (para iniciar sesión)">
+        <Input value={form.usuario} onChange={(e) => set("usuario", e.target.value)} required maxLength={20} />
+      </Campo>
+      <Campo label="Contraseña">
+        <Input
+          type="password"
+          value={form.password}
+          onChange={(e) => set("password", e.target.value)}
+          required
+          minLength={4}
+        />
+      </Campo>
+      <Campo label="Rol">
+        <Select value={form.rol} onChange={(e) => set("rol", e.target.value)}>
+          <option value="VENDEDOR">Vendedor</option>
+          <option value="ADMINISTRADOR">Administrador</option>
+        </Select>
+      </Campo>
+      <div className="flex gap-2 mt-2">
+        <Boton type="button" variante="fantasma" onClick={onCancelar} className="flex-1">
+          Cancelar
+        </Boton>
+        <Boton type="submit" disabled={guardando} className="flex-1">
+          {guardando ? "Guardando..." : "Crear usuario"}
+        </Boton>
+      </div>
+    </form>
+  );
+}
+</file>
+
+<file path="src/context/AuthContext.jsx">
+import { createContext, useContext, useEffect, useState, useCallback } from "react";
+import { api, getToken, setToken, clearToken, registerUnauthorizedHandler } from "../api/client";
+import { decodeJwt, tokenExpirado } from "../utils/jwt";
+
+const AuthContext = createContext(null);
+
+function construirUsuario(token) {
+  const claims = decodeJwt(token);
+  if (!claims || tokenExpirado(claims)) return null;
+  return {
+    id: claims.id,
+    usuario: claims.sub,
+    rol: claims.rol,
+  };
+}
+
+export function AuthProvider({ children }) {
+  const [usuario, setUsuario] = useState(() => {
+    const token = getToken();
+    return token ? construirUsuario(token) : null;
+  });
+  const [cargando, setCargando] = useState(false);
+
+  const logout = useCallback(() => {
+    clearToken();
+    setUsuario(null);
+  }, []);
+
+  useEffect(() => {
+    registerUnauthorizedHandler(logout);
+  }, [logout]);
+
+  async function login(usuarioLogin, password) {
+    setCargando(true);
+    try {
+      const res = await api.post("/auth/login", { usuario: usuarioLogin, password });
+      const token = res.data; // el backend responde el token JWT como texto plano
+      setToken(token);
+      const datos = construirUsuario(token);
+      setUsuario(datos);
+      return datos;
+    } finally {
+      setCargando(false);
+    }
+  }
+
+  return (
+    <AuthContext.Provider value={{ usuario, login, logout, cargando, esAdmin: usuario?.rol === "ADMINISTRADOR" }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+export function useAuth() {
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error("useAuth debe usarse dentro de AuthProvider");
+  return ctx;
+}
+</file>
+
+<file path="src/context/ToastContext.jsx">
+import { createContext, useCallback, useContext, useRef, useState } from "react";
+
+const ToastContext = createContext(null);
+
+export function ToastProvider({ children }) {
+  const [toasts, setToasts] = useState([]);
+  const idRef = useRef(0);
+
+  const push = useCallback((mensaje, tipo = "info") => {
+    const id = ++idRef.current;
+    setToasts((t) => [...t, { id, mensaje, tipo }]);
+    setTimeout(() => {
+      setToasts((t) => t.filter((x) => x.id !== id));
+    }, 3200);
+  }, []);
+
+  const toast = {
+    exito: (msg) => push(msg, "exito"),
+    error: (msg) => push(msg, "error"),
+    info: (msg) => push(msg, "info"),
+  };
+
+  return (
+    <ToastContext.Provider value={toast}>
+      {children}
+      <div className="fixed bottom-20 left-0 right-0 z-[100] flex flex-col items-center gap-2 px-4 pointer-events-none sm:bottom-6">
+        {toasts.map((t) => (
+          <div
+            key={t.id}
+            role="status"
+            className={`pointer-events-auto w-full max-w-sm rounded-tag px-4 py-3 text-sm font-medium font-body shadow-card animate-fade-in border ${
+              t.tipo === "exito"
+                ? "bg-awning text-paper border-awning-dark"
+                : t.tipo === "error"
+                ? "bg-tag-red text-paper border-[#8f2d23]"
+                : "bg-ink text-paper border-black/20"
+            }`}
+          >
+            {t.mensaje}
+          </div>
+        ))}
+      </div>
+    </ToastContext.Provider>
+  );
+}
+
+export function useToast() {
+  const ctx = useContext(ToastContext);
+  if (!ctx) throw new Error("useToast debe usarse dentro de ToastProvider");
+  return ctx;
+}
+</file>
+
+<file path="src/pages/Login.jsx">
+import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { extraerMensajeError } from "../api/client";
+import { Campo, Input, Boton } from "../components/Field";
+import { LockKeyhole } from "lucide-react";
+
+export default function Login() {
+  const { login, cargando } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [usuario, setUsuario] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    setError("");
+    try {
+      await login(usuario.trim(), password);
+      const destino = location.state?.from || "/productos";
+      navigate(destino, { replace: true });
+    } catch (err) {
+      setError(extraerMensajeError(err));
+    }
+  }
+
+  return (
+    <div className="min-h-[100dvh] bg-awning flex flex-col">
+      <div className="flex-1 flex flex-col justify-center px-6 py-10 max-w-sm mx-auto w-full">
+        <div className="mb-10 text-center">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-tag bg-paper text-awning mb-4 rotate-[-4deg] shadow-card">
+            <LockKeyhole size={26} strokeWidth={2} />
+          </div>
+          <h1 className="font-display font-bold text-2xl text-paper tracking-tight">Mi Bodega</h1>
+          <p className="text-paper/70 text-sm font-body mt-1">Control de inventario y ventas</p>
+        </div>
+
+        <form onSubmit={onSubmit} className="bg-paper-card rounded-2xl p-5 shadow-card">
+          <Campo label="Usuario">
+            <Input
+              autoFocus
+              autoComplete="username"
+              value={usuario}
+              onChange={(e) => setUsuario(e.target.value)}
+              placeholder="ej. admin"
+              required
+            />
+          </Campo>
+          <Campo label="Contraseña">
+            <Input
+              type="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
+              required
+            />
+          </Campo>
+
+          {error && (
+            <p className="text-tag-red text-sm font-body mb-4 -mt-1" role="alert">
+              {error}
+            </p>
+          )}
+
+          <Boton type="submit" disabled={cargando} className="w-full">
+            {cargando ? "Ingresando..." : "Ingresar"}
+          </Boton>
+        </form>
+
+        <p className="text-paper/50 text-xs font-body text-center mt-6">
+          ¿Olvidaste tu contraseña? Pide a un administrador que la restablezca.
+        </p>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/Perfil.jsx">
+import { useState } from "react";
+import { LogOut } from "lucide-react";
+import TopBar from "../components/TopBar";
+import { Campo, Input, Boton } from "../components/Field";
+import { useAuth } from "../context/AuthContext";
+import { usuariosApi } from "../api/usuarios";
+import { extraerMensajeError } from "../api/client";
+import { useToast } from "../context/ToastContext";
+
+const rolEtiqueta = { ADMINISTRADOR: "Administrador", VENDEDOR: "Vendedor" };
+
+export default function Perfil() {
+  const { usuario, logout } = useAuth();
+  const toast = useToast();
+  const [nuevoUsuario, setNuevoUsuario] = useState(usuario?.usuario || "");
+  const [nuevaPassword, setNuevaPassword] = useState("");
+  const [guardandoUsuario, setGuardandoUsuario] = useState(false);
+  const [guardandoPassword, setGuardandoPassword] = useState(false);
+
+  async function actualizarUsuario() {
+    if (!nuevoUsuario.trim() || nuevoUsuario === usuario.usuario) return;
+    setGuardandoUsuario(true);
+    try {
+      await usuariosApi.cambiarMiUsuario(nuevoUsuario.trim());
+      toast.exito("Usuario actualizado. Vuelve a iniciar sesión.");
+      logout();
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setGuardandoUsuario(false);
+    }
+  }
+
+  async function actualizarPassword() {
+    if (!nuevaPassword.trim()) return;
+    setGuardandoPassword(true);
+    try {
+      await usuariosApi.cambiarMiPassword(nuevaPassword.trim());
+      toast.exito("Contraseña actualizada. Vuelve a iniciar sesión.");
+      logout();
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setGuardandoPassword(false);
+    }
+  }
+
+  return (
+    <div className="min-h-[100dvh] bg-paper pb-24">
+      <TopBar titulo="Mi perfil" subtitulo={rolEtiqueta[usuario?.rol] || usuario?.rol} />
+
+      <div className="px-4 pt-5 flex flex-col gap-5">
+        <div className="bg-paper-card rounded-tag shadow-card p-4 flex items-center gap-3">
+          <div className="w-12 h-12 rounded-full bg-awning/10 text-awning flex items-center justify-center font-display font-bold text-lg shrink-0">
+            {usuario?.usuario?.[0]?.toUpperCase()}
+          </div>
+          <div>
+            <p className="font-display font-semibold text-ink">@{usuario?.usuario}</p>
+            <p className="text-xs text-ink-soft font-body">{rolEtiqueta[usuario?.rol] || usuario?.rol}</p>
+          </div>
+        </div>
+
+        <div className="bg-paper-card rounded-tag shadow-card p-4">
+          <Campo label="Cambiar usuario de acceso">
+            <Input value={nuevoUsuario} onChange={(e) => setNuevoUsuario(e.target.value)} maxLength={20} />
+          </Campo>
+          <Boton
+            variante="secundario"
+            onClick={actualizarUsuario}
+            disabled={guardandoUsuario || nuevoUsuario === usuario?.usuario}
+            className="w-full"
+          >
+            Guardar usuario
+          </Boton>
+        </div>
+
+        <div className="bg-paper-card rounded-tag shadow-card p-4">
+          <Campo label="Nueva contraseña">
+            <Input
+              type="password"
+              value={nuevaPassword}
+              onChange={(e) => setNuevaPassword(e.target.value)}
+              placeholder="Mínimo 4 caracteres"
+            />
+          </Campo>
+          <Boton
+            variante="secundario"
+            onClick={actualizarPassword}
+            disabled={guardandoPassword || !nuevaPassword.trim()}
+            className="w-full"
+          >
+            Guardar contraseña
+          </Boton>
+        </div>
+
+        <Boton variante="peligro" onClick={logout} className="w-full">
+          <LogOut size={16} /> Cerrar sesión
+        </Boton>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/Productos.jsx">
+import { useEffect, useState, useCallback } from "react";
+import { Plus, Search, X, PackageSearch } from "lucide-react";
+import TopBar from "../components/TopBar";
+import ProductoCard from "../components/ProductoCard";
+import ProductoForm from "../components/ProductoForm";
+import AjusteStock from "../components/AjusteStock";
+import BottomSheet from "../components/BottomSheet";
+import ConfirmDialog from "../components/ConfirmDialog";
+import { Boton, Input } from "../components/Field";
+import { productosApi } from "../api/productos";
+import { extraerMensajeError } from "../api/client";
+import { useToast } from "../context/ToastContext";
+
+export default function Productos() {
+  const toast = useToast();
+  const [productos, setProductos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [busqueda, setBusqueda] = useState("");
+  const [sheetCrear, setSheetCrear] = useState(false);
+  const [productoActivo, setProductoActivo] = useState(null);
+  const [guardando, setGuardando] = useState(false);
+  const [confirmacion, setConfirmacion] = useState(null);
+  const [buscarIdAbierto, setBuscarIdAbierto] = useState(false);
+  const [idBuscado, setIdBuscado] = useState("");
+
+  const cargar = useCallback(async () => {
+    setCargando(true);
+    try {
+      const data = await productosApi.listar();
+      setProductos(data);
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setCargando(false);
+    }
+  }, [toast]);
+
+  useEffect(() => {
+    cargar();
+  }, [cargar]);
+
+  useEffect(() => {
+    const t = setTimeout(async () => {
+      if (!busqueda.trim()) return cargar();
+      try {
+        const data = await productosApi.buscarNombre(busqueda.trim());
+        setProductos(data);
+      } catch (err) {
+        toast.error(extraerMensajeError(err));
+      }
+    }, 350);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [busqueda]);
+
+  async function guardarProducto(datos) {
+    setGuardando(true);
+    try {
+      if (productoActivo?.id) {
+        await productosApi.actualizar(productoActivo.id, datos);
+        toast.exito("Producto actualizado");
+      } else {
+        await productosApi.registrar(datos);
+        toast.exito("Producto registrado");
+      }
+      setSheetCrear(false);
+      setProductoActivo(null);
+      cargar();
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setGuardando(false);
+    }
+  }
+
+  async function ajustarStock(tipo, cantidad) {
+    try {
+      const actualizado =
+        tipo === "aumentar"
+          ? await productosApi.aumentarStock(productoActivo.id, cantidad)
+          : await productosApi.disminuirStock(productoActivo.id, cantidad);
+      setProductoActivo(actualizado);
+      toast.exito(tipo === "aumentar" ? "Stock aumentado" : "Stock disminuido");
+      cargar();
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    }
+  }
+
+  async function alternarEstado() {
+    const p = confirmacion.producto;
+    try {
+      if (p.estado) {
+        await productosApi.desactivar(p.id);
+        toast.exito(`${p.nombre} desactivado`);
+      } else {
+        await productosApi.activar(p.id);
+        toast.exito(`${p.nombre} activado`);
+      }
+      setConfirmacion(null);
+      setProductoActivo(null);
+      cargar();
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    }
+  }
+
+  async function buscarPorId() {
+    if (!idBuscado.trim()) return;
+    try {
+      const p = await productosApi.buscarId(idBuscado.trim());
+      setBuscarIdAbierto(false);
+      setIdBuscado("");
+      setProductoActivo(p);
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    }
+  }
+
+  return (
+    <div className="min-h-[100dvh] bg-paper pb-24">
+      <TopBar
+        titulo="Productos"
+        subtitulo={`${productos.length} ${productos.length === 1 ? "producto activo" : "productos activos"}`}
+        accion={
+          <button
+            onClick={() => setBuscarIdAbierto(true)}
+            className="text-paper/80 hover:text-paper p-1"
+            aria-label="Buscar producto desactivado por ID"
+            title="Buscar por ID (incluye desactivados)"
+          >
+            <PackageSearch size={20} />
+          </button>
+        }
+      />
+
+      <div className="px-4 pt-4">
+        <div className="relative">
+          <Search size={17} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-soft/50" />
+          <Input
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value)}
+            placeholder="Buscar por nombre o marca..."
+            className="pl-9 pr-9"
+          />
+          {busqueda && (
+            <button
+              onClick={() => setBusqueda("")}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-soft/50"
+              aria-label="Limpiar búsqueda"
+            >
+              <X size={16} />
+            </button>
+          )}
+        </div>
+      </div>
+
+      <div className="px-4 mt-4 flex flex-col gap-2.5">
+        {cargando ? (
+          [...Array(4)].map((_, i) => (
+            <div key={i} className="h-[74px] rounded-tag bg-paper-dark animate-pulse" />
+          ))
+        ) : productos.length === 0 ? (
+          <div className="text-center py-16">
+            <p className="font-display font-semibold text-ink mb-1">Nada por aquí</p>
+            <p className="text-sm text-ink-soft font-body">
+              {busqueda ? "No hay productos que coincidan con tu búsqueda." : "Registra tu primer producto con el botón +."}
+            </p>
+          </div>
+        ) : (
+          productos.map((p, i) => (
+            <ProductoCard key={p.id} producto={p} index={i} onAbrir={setProductoActivo} />
+          ))
+        )}
+      </div>
+
+      <button
+        onClick={() => setSheetCrear(true)}
+        className="fixed bottom-24 right-5 z-40 w-14 h-14 rounded-full bg-tag-mustard text-ink shadow-sheet flex items-center justify-center active:scale-95 transition-transform"
+        aria-label="Registrar nuevo producto"
+      >
+        <Plus size={26} strokeWidth={2.4} />
+      </button>
+
+      {/* Crear producto */}
+      <BottomSheet abierto={sheetCrear} onClose={() => setSheetCrear(false)} titulo="Nuevo producto">
+        <ProductoForm onGuardar={guardarProducto} onCancelar={() => setSheetCrear(false)} guardando={guardando} />
+      </BottomSheet>
+
+      {/* Detalle / editar producto */}
+      <BottomSheet
+        abierto={!!productoActivo}
+        onClose={() => setProductoActivo(null)}
+        titulo={productoActivo?.nombre || "Producto"}
+      >
+        {productoActivo && (
+          <div className="flex flex-col gap-4">
+            <AjusteStock
+              unidadMetrica={productoActivo.unidadMetrica}
+              onAjustar={ajustarStock}
+            />
+            <ProductoForm
+              inicial={productoActivo}
+              onGuardar={guardarProducto}
+              onCancelar={() => setProductoActivo(null)}
+              guardando={guardando}
+            />
+            <Boton
+              variante={productoActivo.estado ? "peligro" : "primario"}
+              onClick={() => setConfirmacion({ producto: productoActivo })}
+              className="w-full"
+            >
+              {productoActivo.estado ? "Desactivar producto" : "Activar producto"}
+            </Boton>
+          </div>
+        )}
+      </BottomSheet>
+
+      {/* Buscar por ID (incluye desactivados) */}
+      <BottomSheet abierto={buscarIdAbierto} onClose={() => setBuscarIdAbierto(false)} titulo="Buscar por ID">
+        <p className="text-sm text-ink-soft font-body mb-3">
+          El listado y la búsqueda solo muestran productos activos. Usa esto para encontrar un producto
+          desactivado y reactivarlo.
+        </p>
+        <div className="flex gap-2">
+          <Input
+            value={idBuscado}
+            onChange={(e) => setIdBuscado(e.target.value)}
+            placeholder="ID del producto"
+            inputMode="numeric"
+          />
+          <Boton onClick={buscarPorId}>Buscar</Boton>
+        </div>
+      </BottomSheet>
+
+      <ConfirmDialog
+        abierto={!!confirmacion}
+        titulo={confirmacion?.producto.estado ? "¿Desactivar producto?" : "¿Activar producto?"}
+        mensaje={
+          confirmacion?.producto.estado
+            ? `${confirmacion.producto.nombre} dejará de aparecer en el listado y búsquedas.`
+            : `${confirmacion?.producto.nombre} volverá a estar disponible en el listado.`
+        }
+        variante={confirmacion?.producto.estado ? "peligro" : "primario"}
+        textoConfirmar={confirmacion?.producto.estado ? "Desactivar" : "Activar"}
+        onConfirmar={alternarEstado}
+        onCancelar={() => setConfirmacion(null)}
+      />
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/Usuarios.jsx">
+import { useEffect, useState, useCallback } from "react";
+import { Plus, Search } from "lucide-react";
+import TopBar from "../components/TopBar";
+import UsuarioCard from "../components/UsuarioCard";
+import UsuarioForm from "../components/UsuarioForm";
+import BottomSheet from "../components/BottomSheet";
+import ConfirmDialog from "../components/ConfirmDialog";
+import { Campo, Input, Select, Boton } from "../components/Field";
+import { usuariosApi } from "../api/usuarios";
+import { extraerMensajeError } from "../api/client";
+import { useToast } from "../context/ToastContext";
+import { useAuth } from "../context/AuthContext";
+
+export default function Usuarios() {
+  const toast = useToast();
+  const { usuario: yo } = useAuth();
+  const [usuarios, setUsuarios] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [busqueda, setBusqueda] = useState("");
+  const [sheetCrear, setSheetCrear] = useState(false);
+  const [activo, setActivo] = useState(null);
+  const [nombreEdit, setNombreEdit] = useState("");
+  const [rolEdit, setRolEdit] = useState("VENDEDOR");
+  const [nuevoUsuario, setNuevoUsuario] = useState("");
+  const [nuevaPassword, setNuevaPassword] = useState("");
+  const [guardando, setGuardando] = useState(false);
+  const [confirmacion, setConfirmacion] = useState(null);
+
+  const cargar = useCallback(async () => {
+    setCargando(true);
+    try {
+      setUsuarios(await usuariosApi.listar());
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setCargando(false);
+    }
+  }, [toast]);
+
+  useEffect(() => {
+    cargar();
+  }, [cargar]);
+
+  useEffect(() => {
+    if (activo) {
+      setNombreEdit(activo.nombre);
+      setRolEdit(activo.rol);
+      setNuevoUsuario(activo.usuario);
+      setNuevaPassword("");
+    }
+  }, [activo]);
+
+  const filtrados = busqueda.trim()
+    ? usuarios.filter(
+        (u) =>
+          u.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+          u.usuario.toLowerCase().includes(busqueda.toLowerCase())
+      )
+    : usuarios;
+
+  async function crearUsuario(datos) {
+    setGuardando(true);
+    try {
+      await usuariosApi.registrar(datos);
+      toast.exito("Usuario creado");
+      setSheetCrear(false);
+      cargar();
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setGuardando(false);
+    }
+  }
+
+  async function guardarDatosBasicos() {
+    setGuardando(true);
+    try {
+      await usuariosApi.actualizar(activo.id, {
+        nombre: nombreEdit,
+        rol: rolEdit,
+        usuario: activo.usuario,
+        password: "sinuso1234",
+      });
+      toast.exito("Datos actualizados");
+      cargar();
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setGuardando(false);
+    }
+  }
+
+  async function guardarNuevoUsuario() {
+    if (nuevoUsuario === activo.usuario) return;
+    setGuardando(true);
+    try {
+      await usuariosApi.cambiarUsuario(activo.id, nuevoUsuario.trim());
+      toast.exito("Usuario de acceso actualizado");
+      cargar();
+      setActivo(null);
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setGuardando(false);
+    }
+  }
+
+  async function guardarNuevaPassword() {
+    if (!nuevaPassword.trim()) return;
+    setGuardando(true);
+    try {
+      await usuariosApi.cambiarPassword(activo.id, nuevaPassword.trim());
+      toast.exito("Contraseña actualizada");
+      setNuevaPassword("");
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setGuardando(false);
+    }
+  }
+
+  async function alternarEstado() {
+    const u = confirmacion.usuario;
+    try {
+      if (u.estado) {
+        await usuariosApi.desactivar(u.id);
+        toast.exito(`${u.nombre} desactivado`);
+      } else {
+        await usuariosApi.activar(u.id);
+        toast.exito(`${u.nombre} activado`);
+      }
+      setConfirmacion(null);
+      setActivo(null);
+      cargar();
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    }
+  }
+
+  return (
+    <div className="min-h-[100dvh] bg-paper pb-24">
+      <TopBar titulo="Usuarios" subtitulo={`${usuarios.length} activos`} />
+
+      <div className="px-4 pt-4">
+        <div className="relative">
+          <Search size={17} className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-soft/50" />
+          <Input
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value)}
+            placeholder="Buscar por nombre o usuario..."
+            className="pl-9"
+          />
+        </div>
+      </div>
+
+      <div className="px-4 mt-4 flex flex-col gap-2.5">
+        {cargando ? (
+          [...Array(3)].map((_, i) => (
+            <div key={i} className="h-[62px] rounded-tag bg-paper-dark animate-pulse" />
+          ))
+        ) : filtrados.length === 0 ? (
+          <div className="text-center py-16">
+            <p className="font-display font-semibold text-ink mb-1">Sin resultados</p>
+            <p className="text-sm text-ink-soft font-body">No hay usuarios que coincidan.</p>
+          </div>
+        ) : (
+          filtrados.map((u, i) => <UsuarioCard key={u.id} usuario={u} index={i} onAbrir={setActivo} />)
+        )}
+      </div>
+
+      <button
+        onClick={() => setSheetCrear(true)}
+        className="fixed bottom-24 right-5 z-40 w-14 h-14 rounded-full bg-tag-mustard text-ink shadow-sheet flex items-center justify-center active:scale-95 transition-transform"
+        aria-label="Registrar nuevo usuario"
+      >
+        <Plus size={26} strokeWidth={2.4} />
+      </button>
+
+      <BottomSheet abierto={sheetCrear} onClose={() => setSheetCrear(false)} titulo="Nuevo usuario">
+        <UsuarioForm onGuardar={crearUsuario} onCancelar={() => setSheetCrear(false)} guardando={guardando} />
+      </BottomSheet>
+
+      <BottomSheet abierto={!!activo} onClose={() => setActivo(null)} titulo={activo?.nombre || "Usuario"}>
+        {activo && (
+          <div className="flex flex-col gap-5">
+            <div>
+              <Campo label="Nombre completo">
+                <Input value={nombreEdit} onChange={(e) => setNombreEdit(e.target.value)} maxLength={100} />
+              </Campo>
+              <Campo label="Rol">
+                <Select value={rolEdit} onChange={(e) => setRolEdit(e.target.value)}>
+                  <option value="VENDEDOR">Vendedor</option>
+                  <option value="ADMINISTRADOR">Administrador</option>
+                </Select>
+              </Campo>
+              <Boton onClick={guardarDatosBasicos} disabled={guardando} className="w-full">
+                Guardar nombre y rol
+              </Boton>
+            </div>
+
+            <div className="border-t border-stone pt-4">
+              <Campo label="Usuario de acceso">
+                <Input value={nuevoUsuario} onChange={(e) => setNuevoUsuario(e.target.value)} maxLength={20} />
+              </Campo>
+              <Boton
+                variante="secundario"
+                onClick={guardarNuevoUsuario}
+                disabled={guardando || nuevoUsuario === activo.usuario}
+                className="w-full"
+              >
+                Actualizar usuario de acceso
+              </Boton>
+            </div>
+
+            <div className="border-t border-stone pt-4">
+              <Campo label="Nueva contraseña">
+                <Input
+                  type="password"
+                  value={nuevaPassword}
+                  onChange={(e) => setNuevaPassword(e.target.value)}
+                  placeholder="Dejar vacío para no cambiar"
+                />
+              </Campo>
+              <Boton
+                variante="secundario"
+                onClick={guardarNuevaPassword}
+                disabled={guardando || !nuevaPassword.trim()}
+                className="w-full"
+              >
+                Restablecer contraseña
+              </Boton>
+            </div>
+
+            {activo.id !== yo?.id && (
+              <Boton
+                variante={activo.estado ? "peligro" : "primario"}
+                onClick={() => setConfirmacion({ usuario: activo })}
+                className="w-full"
+              >
+                {activo.estado ? "Desactivar usuario" : "Activar usuario"}
+              </Boton>
+            )}
+          </div>
+        )}
+      </BottomSheet>
+
+      <ConfirmDialog
+        abierto={!!confirmacion}
+        titulo={confirmacion?.usuario.estado ? "¿Desactivar usuario?" : "¿Activar usuario?"}
+        mensaje={
+          confirmacion?.usuario.estado
+            ? `${confirmacion.usuario.nombre} ya no podrá iniciar sesión.`
+            : `${confirmacion?.usuario.nombre} podrá iniciar sesión nuevamente.`
+        }
+        variante={confirmacion?.usuario.estado ? "peligro" : "primario"}
+        textoConfirmar={confirmacion?.usuario.estado ? "Desactivar" : "Activar"}
+        onConfirmar={alternarEstado}
+        onCancelar={() => setConfirmacion(null)}
+      />
+    </div>
+  );
+}
+</file>
+
+<file path="src/utils/jwt.js">
+// Decodifica el payload de un JWT en el navegador.
+// No verifica la firma: eso ya lo hace el backend en cada request.
+// Aquí solo lo usamos para leer usuario/rol y mostrar la UI correcta,
+// y para saber si expiró y cerrar sesión localmente.
+export function decodeJwt(token) {
+  try {
+    const payload = token.split(".")[1];
+    const normalizado = payload.replace(/-/g, "+").replace(/_/g, "/");
+    const json = decodeURIComponent(
+      atob(normalizado)
+        .split("")
+        .map((c) => "%" + c.charCodeAt(0).toString(16).padStart(2, "0"))
+        .join("")
+    );
+    return JSON.parse(json);
+  } catch {
+    return null;
+  }
+}
+
+export function tokenExpirado(claims) {
+  if (!claims?.exp) return true;
+  return Date.now() >= claims.exp * 1000;
+}
+</file>
+
+<file path="src/App.jsx">
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider, useAuth } from "./context/AuthContext";
+import { ToastProvider } from "./context/ToastContext";
+import { RutaPrivada, RutaAdmin } from "./components/RutasProtegidas";
+import Layout from "./components/Layout";
+import Login from "./pages/Login";
+import Productos from "./pages/Productos";
+import Usuarios from "./pages/Usuarios";
+import Perfil from "./pages/Perfil";
+
+function RaizPublica() {
+  const { usuario } = useAuth();
+  return <Navigate to={usuario ? "/productos" : "/login"} replace />;
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <ToastProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<RaizPublica />} />
+            <Route path="/login" element={<Login />} />
+
+            <Route element={<RutaPrivada />}>
+              <Route element={<Layout />}>
+                <Route path="/productos" element={<Productos />} />
+                <Route path="/perfil" element={<Perfil />} />
+                <Route element={<RutaAdmin />}>
+                  <Route path="/usuarios" element={<Usuarios />} />
+                </Route>
+              </Route>
+            </Route>
+
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </BrowserRouter>
+      </ToastProvider>
+    </AuthProvider>
+  );
+}
+</file>
+
+<file path="src/index.css">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  background-color: #F2ECD8;
+  color: #1B1B18;
+  font-family: 'Inter', sans-serif;
+  font-variant-numeric: tabular-nums;
+  overscroll-behavior-y: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #E3A72E;
+  outline-offset: 2px;
+}
+
+/* Perforated ticket-edge divider, used to separate the app bar from content */
+.ticket-edge {
+  position: relative;
+  height: 10px;
+  background: #1F4D3D;
+}
+.ticket-edge::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 10px;
+  background-image: radial-gradient(circle at 8px 0, transparent 6px, #F2ECD8 6.5px);
+  background-size: 16px 10px;
+  background-repeat: repeat-x;
+}
+
+/* Scrollbar - subtle */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #D8D2C0; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Stagger fade-in for list items */
+.stagger-item {
+  animation: fade-in 0.3s ease-out backwards;
+}
+</file>
+
+<file path="src/main.jsx">
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+</file>
+
+<file path=".env.example">
+# URL base de tu backend Spring Boot.
+# Local (XAMPP/backend en tu PC): http://localhost:8080
+# Producción (Oracle Cloud, más adelante): https://tu-dominio-o-ip:8080
+VITE_API_URL=http://localhost:8080
+</file>
+
+<file path=".gitignore">
+node_modules/
+dist/
+dist-ssr/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+.vercel
+</file>
+
+<file path=".oxlintrc.json">
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "oxc"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/tag-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+    <meta name="theme-color" content="#1F4D3D" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Mi Bodega · Control de inventario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="postcss.config.js">
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+</file>
+
+<file path="README.md">
+# Mi Bodega — Frontend
+
+Frontend web para el sistema de control de inventario "Bodega" (backend Spring Boot). Pensado
+mobile-first, priorizando Android, y funcional también en PC.
+
+Stack: **React + Vite + Tailwind CSS** (sitio estático, ideal para el plan gratuito de Vercel).
+
+## 1. Configurar la URL del backend
+
+Todo el frontend habla con el backend a través de una sola variable de entorno:
+
+```
+VITE_API_URL=http://localhost:8080
+```
+
+Ya existe un archivo `.env` con ese valor para desarrollo local. Cuando muevas el backend a
+Oracle Cloud, **no tocas código**: solo cambias esta variable.
+
+## 2. Probar en local (backend en tu PC con XAMPP)
+
+```bash
+npm install
+npm run dev
+```
+
+Esto abre el frontend en `http://localhost:5173`. Asegúrate de que tu backend Spring Boot esté
+corriendo en `http://localhost:8080` (o ajusta `VITE_API_URL` en `.env` si usas otro puerto).
+
+Para probarlo desde tu celular Android en la misma red Wi-Fi:
+1. Averigua la IP local de tu PC (`ipconfig` en Windows, busca algo como `192.168.1.X`).
+2. En `.env`, pon `VITE_API_URL=http://192.168.1.X:8080` (la IP de tu PC, puerto del backend).
+3. Corre `npm run dev -- --host` y entra desde el celular a `http://192.168.1.X:5173`.
+4. Verifica que el firewall de Windows permita conexiones a esos puertos.
+
+## 3. Desplegar en Vercel (gratis)
+
+1. Sube esta carpeta a un repositorio de GitHub.
+2. En vercel.com, "Add New Project" → importa el repo.
+3. Vercel detecta Vite automáticamente (build command `npm run build`, output `dist`).
+4. En **Project Settings → Environment Variables**, agrega:
+   - `VITE_API_URL` = la URL pública donde esté tu backend en ese momento.
+5. Deploy.
+
+Importante: mientras el backend esté solo en tu PC (localhost), el frontend desplegado en
+Vercel (en internet) no podrá alcanzarlo — `localhost` en Vercel se refiere a los servidores
+de Vercel, no a tu PC. Para probar el sitio ya desplegado necesitas exponer tu backend a internet
+(por ejemplo con un túnel como Cloudflare Tunnel o ngrok apuntando a tu puerto 8080) y poner esa
+URL pública en `VITE_API_URL`. Cuando migres a Oracle Cloud, esto se resuelve solo: usas la IP o
+dominio de tu instancia.
+
+## 4. Migrar a Oracle Cloud más adelante
+
+1. Despliega el backend y la base de datos en tu instancia de Oracle Cloud.
+2. Abre el puerto del backend (ej. 8080) en las reglas de seguridad de red de Oracle Cloud.
+3. Actualiza `VITE_API_URL` en Vercel con `http://<ip-o-dominio-oracle>:8080` y vuelve a
+   desplegar (o simplemente "Redeploy" en Vercel, sin tocar código).
+4. Revisa `SecurityConfig.java` en el backend: los CORS ya están abiertos a cualquier origen
+   (`AllowedOriginPatterns("*")`), así que no necesitas tocar esa parte al cambiar de dominio.
+
+## Estructura del proyecto
+
+```
+src/
+  api/          Cliente HTTP (axios) y llamadas a /auth, /productos, /usuarios
+  context/      Sesión (AuthContext) y notificaciones (ToastContext)
+  components/   Piezas reutilizables: tarjetas, formularios, hoja modal, nav inferior
+  pages/        Login, Productos, Usuarios (solo admin), Perfil
+```
+
+## Funcionalidades
+
+- **Login** con JWT (el token se decodifica en el navegador solo para mostrar usuario/rol; la
+  validación real de seguridad siempre ocurre en el backend).
+- **Productos**: listar, buscar, crear, editar, activar/desactivar, y ajustar stock con
+  botones rápidos de + / -. Como el backend solo lista productos activos, hay un buscador por
+  ID para encontrar y reactivar productos desactivados.
+- **Usuarios** (solo rol ADMINISTRADOR): listar, crear, editar nombre/rol, cambiar su usuario
+  de acceso, restablecer contraseña, activar/desactivar.
+- **Perfil**: cualquier usuario puede cambiar su propio usuario de acceso o contraseña, y cerrar
+  sesión.
+
+## Notas de diseño
+
+Pensado para pantallas de Android en vertical: navegación inferior fija con pestañas grandes,
+formularios en hojas que suben desde abajo (como los diálogos nativos de Android), botón flotante
+(+) para crear registros, y tarjetas con una franja de color que indica el nivel de stock de un
+vistazo (verde = bien, mostaza = bajo, rojo = agotado).
+</file>
+
+<file path="tailwind.config.js">
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        awning: {
+          DEFAULT: "#1F4D3D",
+          light: "#2C6650",
+          dark: "#153728",
+        },
+        paper: {
+          DEFAULT: "#F2ECD8",
+          dark: "#E6DEC2",
+          card: "#FBF8EF",
+        },
+        ink: {
+          DEFAULT: "#1B1B18",
+          soft: "#4A473E",
+        },
+        tag: {
+          red: "#B23A2E",
+          mustard: "#E3A72E",
+        },
+        stone: "#D8D2C0",
+      },
+      borderRadius: {
+        tag: "8px",
+      },
+      fontFamily: {
+        display: ["'Space Grotesk'", "sans-serif"],
+        body: ["'Inter'", "sans-serif"],
+        mono: ["'IBM Plex Mono'", "monospace"],
+      },
+      boxShadow: {
+        card: "0 1px 2px rgba(27,27,24,0.06), 0 1px 0 rgba(27,27,24,0.04)",
+        sheet: "0 -8px 30px rgba(27,27,24,0.22)",
+      },
+      keyframes: {
+        "slide-up": {
+          "0%": { transform: "translateY(100%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+        "fade-in": {
+          "0%": { opacity: 0, transform: "translateY(4px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "slide-up": "slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
+        "fade-in": "fade-in 0.3s ease-out",
+      },
+    },
+  },
+  plugins: [],
+}
+</file>
+
+<file path="vercel.json">
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+</file>
+
+<file path="package.json">
+{
+  "name": "bodega-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.19.0",
+    "lucide-react": "^1.28.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "autoprefixer": "^10.5.4",
+    "oxlint": "^1.75.0",
+    "postcss": "^8.5.25",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.2.0",
+    "vite-plugin-pwa": "^1.3.0"
+  }
+}
+</file>
+
+<file path="vite.config.js">
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+                            VitePWA({
+                              registerType: 'autoUpdate',
+                              includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
+                              manifest: {
+                                name: 'Mi Bodega',
+                                short_name: 'Mi Bodega',
+                                description: 'Control de inventario y ventas',
+                                theme_color: '#1F3D2E',
+                                background_color: '#1F3D2E',
+                                display: 'standalone',
+                                start_url: '/',
+                                icons: [
+                                  {
+                                    src: '/icon-192.png',
+                                    sizes: '192x192',
+                                    type: 'image/png'
+                                  },
+                                  {
+                                    src: '/icon-512.png',
+                                    sizes: '512x512',
+                                    type: 'image/png'
+                                  },
+                                  {
+                                    src: '/maskable-512.png',
+                                    sizes: '512x512',
+                                    type: 'image/png',
+                                    purpose: 'maskable'
+                                  }
+                                ]
+                              }
+                            })
+  ],
+})
+</file>
+
+</files>
