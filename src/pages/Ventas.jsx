@@ -1,9 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { Search, X, Users, ShoppingCart } from "lucide-react";
+import { Search, X, Users, ShoppingCart, UserPlus } from "lucide-react";
 import TopBar from "../components/TopBar";
 import CarritoItem from "../components/CarritoItem";
 import VentaCard from "../components/VentaCard";
+import ClienteForm from "../components/ClienteForm";
 import BottomSheet from "../components/BottomSheet";
 import ConfirmDialog from "../components/ConfirmDialog";
 import { Boton, Input } from "../components/Field";
@@ -30,6 +31,8 @@ export default function Ventas() {
   const [busquedaCliente, setBusquedaCliente] = useState("");
   const [resultadosCliente, setResultadosCliente] = useState([]);
   const [clienteSeleccionado, setClienteSeleccionado] = useState(null);
+  const [sheetNuevoCliente, setSheetNuevoCliente] = useState(false);
+  const [guardandoCliente, setGuardandoCliente] = useState(false);
 
   const [registrando, setRegistrando] = useState(false);
 
@@ -120,6 +123,20 @@ export default function Ventas() {
     setResultadosCliente([]);
   }
 
+  async function crearClienteRapido(datos) {
+    setGuardandoCliente(true);
+    try {
+      const nuevo = await clientesApi.registrar(datos);
+      toast.exito("Cliente registrado");
+      seleccionarCliente(nuevo);
+      setSheetNuevoCliente(false);
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setGuardandoCliente(false);
+    }
+  }
+
   const total = carrito.reduce((acc, it) => acc + it.precioVenta * it.cantidad, 0);
   const puedeRegistrar = carrito.length > 0 && (metodoPago !== "FIADO" || !!clienteSeleccionado);
 
@@ -127,7 +144,7 @@ export default function Ventas() {
     setRegistrando(true);
     try {
       const respuesta = await ventasApi.registrar({
-        clienteId: metodoPago === "FIADO" ? clienteSeleccionado.id : null,
+        clienteId: clienteSeleccionado?.id ?? null,
         metodoPago,
         items: carrito.map((it) => ({ productoId: it.productoId, cantidad: it.cantidad })),
       });
@@ -240,22 +257,24 @@ export default function Ventas() {
           </div>
         </div>
 
-        {/* Selección de cliente para fiado */}
-        {metodoPago === "FIADO" && (
-          <div>
-            <p className="text-xs font-body font-semibold uppercase tracking-wide text-ink-soft mb-1.5">Cliente</p>
-            {clienteSeleccionado ? (
-              <div className="flex items-center justify-between bg-paper-card rounded-tag shadow-card px-3.5 py-2.5">
-                <span className="font-body text-sm font-semibold text-ink">{clienteSeleccionado.nombre}</span>
-                <button
-                  onClick={() => setClienteSeleccionado(null)}
-                  className="text-ink-soft"
-                  aria-label="Quitar cliente seleccionado"
-                >
-                  <X size={16} />
-                </button>
-              </div>
-            ) : (
+        {/* Selección de cliente (opcional en contado/yape, obligatoria en fiado) */}
+        <div>
+          <p className="text-xs font-body font-semibold uppercase tracking-wide text-ink-soft mb-1.5">
+            {metodoPago === "FIADO" ? "Cliente (obligatorio)" : "Cliente (opcional)"}
+          </p>
+          {clienteSeleccionado ? (
+            <div className="flex items-center justify-between bg-paper-card rounded-tag shadow-card px-3.5 py-2.5">
+              <span className="font-body text-sm font-semibold text-ink">{clienteSeleccionado.nombre}</span>
+              <button
+                onClick={() => setClienteSeleccionado(null)}
+                className="text-ink-soft"
+                aria-label="Quitar cliente seleccionado"
+              >
+                <X size={16} />
+              </button>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-2">
               <div className="relative">
                 <Input
                   value={busquedaCliente}
@@ -276,9 +295,17 @@ export default function Ventas() {
                   </div>
                 )}
               </div>
-            )}
-          </div>
-        )}
+              <button
+                type="button"
+                onClick={() => setSheetNuevoCliente(true)}
+                className="self-start flex items-center gap-1.5 text-sm font-body font-semibold text-awning"
+              >
+                <UserPlus size={16} />
+                Registrar nuevo cliente
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* Total y confirmar */}
         <div className="bg-paper-card rounded-tag shadow-card px-4 py-3.5 flex items-center justify-between">
@@ -344,6 +371,15 @@ export default function Ventas() {
             )}
           </div>
         )}
+      </BottomSheet>
+
+      {/* Registro rápido de cliente desde la venta */}
+      <BottomSheet abierto={sheetNuevoCliente} onClose={() => setSheetNuevoCliente(false)} titulo="Nuevo cliente">
+        <ClienteForm
+          onGuardar={crearClienteRapido}
+          onCancelar={() => setSheetNuevoCliente(false)}
+          guardando={guardandoCliente}
+        />
       </BottomSheet>
 
       <ConfirmDialog
