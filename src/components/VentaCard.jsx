@@ -37,14 +37,10 @@ export default function VentaCard({ venta, onAbrir, index = 0 }) {
           <span className={`text-[10px] font-body font-semibold uppercase tracking-wide text-paper px-2 py-1 rounded-tag ${metodo.color}`}>
             {metodo.texto}
           </span>
-<<<<<<< HEAD
           <span className="text-[11px] font-body text-ink-soft truncate max-w-[45%]">
             {venta.usuario?.nombre ? `Vendió: ${venta.usuario.nombre}` : ""}
           </span>
           {anulada && <span className="text-[11px] font-body text-tag-red font-semibold shrink-0">Anulada</span>}
-=======
-          {anulada && <span className="text-[11px] font-body text-tag-red font-semibold">Anulada</span>}
->>>>>>> 72f8a438f94b579ea22a14572469716337a229e7
         </div>
       </div>
     </button>

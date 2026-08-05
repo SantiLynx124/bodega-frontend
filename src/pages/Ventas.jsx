@@ -364,14 +364,11 @@ export default function Ventas() {
               {ventaActiva.metodoPago} · {new Date(ventaActiva.fecha).toLocaleString("es-PE")}
               {ventaActiva.estado === "ANULADA" && " · Anulada"}
             </p>
-<<<<<<< HEAD
             {ventaActiva.usuario?.nombre && (
               <p className="text-xs text-ink-soft font-body -mt-1">
                 Registrada por <span className="font-semibold text-ink">{ventaActiva.usuario.nombre}</span>
               </p>
             )}
-=======
->>>>>>> 72f8a438f94b579ea22a14572469716337a229e7
             {ventaActiva.estado === "REGISTRADA" && (
               <Boton variante="peligro" onClick={() => setConfirmacionAnular(ventaActiva)} className="w-full">
                 Anular venta
