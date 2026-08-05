@@ -32,6 +32,7 @@ Para probarlo desde tu celular Android en la misma red Wi-Fi:
 3. Corre `npm run dev -- --host` y entra desde el celular a `http://192.168.1.X:5173`.
 4. Verifica que el firewall de Windows permita conexiones a esos puertos.
 
+<<<<<<< HEAD
 ## 3. Subir a GitHub (ya viene con git listo)
 
 Este proyecto ya tiene un repositorio git local inicializado con el primer commit hecho. Solo
@@ -62,6 +63,9 @@ Si conectaste el repositorio a Vercel (ver siguiente sección), cada `git push` 
 dispara automáticamente un nuevo despliegue — no tienes que hacer nada más en Vercel.
 
 ## 4. Desplegar en Vercel (gratis)
+=======
+## 3. Desplegar en Vercel (gratis)
+>>>>>>> 72f8a438f94b579ea22a14572469716337a229e7
 
 1. Sube esta carpeta a un repositorio de GitHub.
 2. En vercel.com, "Add New Project" → importa el repo.
@@ -77,7 +81,11 @@ de Vercel, no a tu PC. Para probar el sitio ya desplegado necesitas exponer tu b
 URL pública en `VITE_API_URL`. Cuando migres a Oracle Cloud, esto se resuelve solo: usas la IP o
 dominio de tu instancia.
 
+<<<<<<< HEAD
 ## 5. Migrar a Oracle Cloud más adelante
+=======
+## 4. Migrar a Oracle Cloud más adelante
+>>>>>>> 72f8a438f94b579ea22a14572469716337a229e7
 
 1. Despliega el backend y la base de datos en tu instancia de Oracle Cloud.
 2. Abre el puerto del backend (ej. 8080) en las reglas de seguridad de red de Oracle Cloud.
@@ -103,6 +111,7 @@ src/
 - **Productos**: listar, buscar, crear, editar, activar/desactivar, y ajustar stock con
   botones rápidos de + / -. Como el backend solo lista productos activos, hay un buscador por
   ID para encontrar y reactivar productos desactivados.
+<<<<<<< HEAD
 - **Ventas**: arma una venta con varios productos (carrito), elige método de pago
   (Contado/Yape/Fiado), asocia un cliente opcional (obligatorio si es fiado), y anula ventas
   (esto repone el stock automáticamente). Cada venta muestra quién la registró.
@@ -111,11 +120,14 @@ src/
 - **Ganancias** (solo ADMINISTRADOR): calculado en el frontend a partir de las ventas —
   ingresos, costo y ganancia por rango de fechas, gráfico de los últimos 7 días, y detalle
   por venta. Ver la sección "Cómo funciona Ganancias" más abajo.
+=======
+>>>>>>> 72f8a438f94b579ea22a14572469716337a229e7
 - **Usuarios** (solo rol ADMINISTRADOR): listar, crear, editar nombre/rol, cambiar su usuario
   de acceso, restablecer contraseña, activar/desactivar.
 - **Perfil**: cualquier usuario puede cambiar su propio usuario de acceso o contraseña, y cerrar
   sesión.
 
+<<<<<<< HEAD
 ## Cómo funciona Ganancias
 
 Tu backend no tiene un endpoint de reportes financieros, así que el cálculo se hace en el
@@ -142,6 +154,8 @@ anotación al campo y vuelve a desplegar el backend:
 private String password;
 ```
 
+=======
+>>>>>>> 72f8a438f94b579ea22a14572469716337a229e7
 ## Notas de diseño
 
 Pensado para pantallas de Android en vertical: navegación inferior fija con pestañas grandes,

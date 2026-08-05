@@ -8,7 +8,10 @@ import Productos from "./pages/Productos";
 import Ventas from "./pages/Ventas";
 import Clientes from "./pages/Clientes";
 import Usuarios from "./pages/Usuarios";
+<<<<<<< HEAD
 import Ganancias from "./pages/Ganancias";
+=======
+>>>>>>> 72f8a438f94b579ea22a14572469716337a229e7
 import Perfil from "./pages/Perfil";
 
 function RaizPublica() {
@@ -33,7 +36,10 @@ export default function App() {
                 <Route path="/perfil" element={<Perfil />} />
                 <Route element={<RutaAdmin />}>
                   <Route path="/usuarios" element={<Usuarios />} />
+<<<<<<< HEAD
                   <Route path="/ganancias" element={<Ganancias />} />
+=======
+>>>>>>> 72f8a438f94b579ea22a14572469716337a229e7
                 </Route>
               </Route>
             </Route>
