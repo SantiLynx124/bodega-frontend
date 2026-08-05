@@ -1,5 +1,9 @@
 import { NavLink } from "react-router-dom";
+<<<<<<< HEAD
 import { Package, ShoppingCart, Users, CircleUser, TrendingUp } from "lucide-react";
+=======
+import { Package, ShoppingCart, Users, CircleUser } from "lucide-react";
+>>>>>>> 72f8a438f94b579ea22a14572469716337a229e7
 import { useAuth } from "../context/AuthContext";
 
 const itemBase =
@@ -57,6 +61,7 @@ export default function BottomNav() {
         </NavLink>
       )}
 
+<<<<<<< HEAD
       {esAdmin && (
         <NavLink
           to="/ganancias"
@@ -73,6 +78,8 @@ export default function BottomNav() {
         </NavLink>
       )}
 
+=======
+>>>>>>> 72f8a438f94b579ea22a14572469716337a229e7
       <NavLink
         to="/perfil"
         className={({ isActive }) =>
