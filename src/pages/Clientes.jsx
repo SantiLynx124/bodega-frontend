@@ -5,11 +5,13 @@ import ClienteCard from "../components/ClienteCard";
 import ClienteForm from "../components/ClienteForm";
 import CuentaFiadoPanel from "../components/CuentaFiadoPanel";
 import ConfiguracionFiadoForm from "../components/ConfiguracionFiadoForm";
+import VentaCard from "../components/VentaCard";
 import BottomSheet from "../components/BottomSheet";
 import ConfirmDialog from "../components/ConfirmDialog";
 import { Boton, Input } from "../components/Field";
 import { clientesApi } from "../api/clientes";
 import { configuracionFiadoApi } from "../api/configuracionFiado";
+import { ventasApi } from "../api/ventas";
 import { extraerMensajeError } from "../api/client";
 import { useToast } from "../context/ToastContext";
 import { useAuth } from "../context/AuthContext";
@@ -29,6 +31,9 @@ export default function Clientes() {
   const [confirmacion, setConfirmacion] = useState(null);
   const [sheetConfig, setSheetConfig] = useState(false);
   const [config, setConfig] = useState(null);
+  const [historialVentas, setHistorialVentas] = useState([]);
+  const [cargandoHistorial, setCargandoHistorial] = useState(false);
+  const [ventaActiva, setVentaActiva] = useState(null);
 
   const cargar = useCallback(async () => {
     setCargando(true);
@@ -63,7 +68,9 @@ export default function Clientes() {
     setClienteActivo(c);
     setModoEdicion(false);
     setCuenta(null);
+    setHistorialVentas([]);
     setCargandoCuenta(true);
+    setCargandoHistorial(true);
     try {
       setCuenta(await clientesApi.verCuentaFiado(c.id));
     } catch (err) {
@@ -71,12 +78,22 @@ export default function Clientes() {
     } finally {
       setCargandoCuenta(false);
     }
+    try {
+      const data = await ventasApi.porCliente(c.id);
+      data.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+      setHistorialVentas(data);
+    } catch (err) {
+      toast.error(extraerMensajeError(err));
+    } finally {
+      setCargandoHistorial(false);
+    }
   }
 
   function cerrarSheetDetalle() {
     setClienteActivo(null);
     setModoEdicion(false);
     setCuenta(null);
+    setHistorialVentas([]);
   }
 
   async function guardarCliente(datos) {
@@ -310,8 +327,76 @@ export default function Clientes() {
                   />
                 )}
               </div>
+
+              <div className="border-t border-stone pt-4">
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-xs font-body font-semibold uppercase tracking-wide text-ink-soft">
+                    Historial de ventas
+                  </p>
+                  {historialVentas.length > 0 && (
+                    <p className="text-xs font-body text-ink-soft">
+                      {historialVentas.length} {historialVentas.length === 1 ? "venta" : "ventas"}
+                    </p>
+                  )}
+                </div>
+                {cargandoHistorial ? (
+                  <div className="flex flex-col gap-2">
+                    {[...Array(2)].map((_, i) => (
+                      <div key={i} className="h-[70px] rounded-tag bg-paper-dark animate-pulse" />
+                    ))}
+                  </div>
+                ) : historialVentas.length === 0 ? (
+                  <p className="text-sm text-ink-soft font-body text-center py-6">
+                    Este cliente todavía no tiene ventas registradas.
+                  </p>
+                ) : (
+                  <div className="flex flex-col gap-2.5">
+                    {historialVentas.map((v, i) => (
+                      <VentaCard key={v.id} venta={v} index={i} onAbrir={setVentaActiva} />
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
+      </BottomSheet>
+
+      {/* Detalle de una venta del historial del cliente */}
+      <BottomSheet
+        abierto={!!ventaActiva}
+        onClose={() => setVentaActiva(null)}
+        titulo={ventaActiva?.cliente?.nombre || "Venta"}
+        etiquetaEsquina={ventaActiva ? `ID ${ventaActiva.id}` : null}
+      >
+        {ventaActiva && (
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
+              {ventaActiva.items?.map((it) => (
+                <div key={it.id} className="flex items-center justify-between text-sm font-body">
+                  <span className="text-ink truncate pr-2">
+                    {it.producto?.nombre} <span className="text-ink-soft">× {it.cantidad}</span>
+                  </span>
+                  <span className="font-mono text-ink shrink-0">
+                    S/ {(Number(it.precioUnitario) * Number(it.cantidad)).toFixed(2)}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="border-t border-stone pt-3 flex items-center justify-between">
+              <span className="font-body font-semibold text-ink-soft text-sm">Total</span>
+              <span className="font-mono font-bold text-lg text-ink">S/ {Number(ventaActiva.montoTotal).toFixed(2)}</span>
+            </div>
+            <p className="text-xs text-ink-soft font-body">
+              {ventaActiva.metodoPago} · {new Date(ventaActiva.fecha).toLocaleString("es-PE")}
+              {ventaActiva.estado === "ANULADA" && " · Anulada"}
+            </p>
+            {ventaActiva.usuario?.nombre && (
+              <p className="text-xs text-ink-soft font-body -mt-1">
+                Registrada por <span className="font-semibold text-ink">{ventaActiva.usuario.nombre}</span>
+              </p>
+            )}
+          </div>
+        )}
       </BottomSheet>
 
       {/* Configuración global de fiado (admin) */}

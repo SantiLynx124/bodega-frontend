@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import { ToastProvider } from "./context/ToastContext";
+import { CarritoProvider } from "./context/CarritoContext";
 import { RutaPrivada, RutaAdmin } from "./components/RutasProtegidas";
 import Layout from "./components/Layout";
 import Login from "./pages/Login";
@@ -20,6 +21,7 @@ export default function App() {
   return (
     <AuthProvider>
       <ToastProvider>
+        <CarritoProvider>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<RaizPublica />} />
@@ -41,6 +43,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </BrowserRouter>
+        </CarritoProvider>
       </ToastProvider>
     </AuthProvider>
   );

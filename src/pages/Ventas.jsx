@@ -13,6 +13,7 @@ import { clientesApi } from "../api/clientes";
 import { ventasApi } from "../api/ventas";
 import { extraerMensajeError } from "../api/client";
 import { useToast } from "../context/ToastContext";
+import { useCarrito } from "../context/CarritoContext";
 
 const METODOS = [
   { id: "CONTADO", label: "Contado" },
@@ -23,14 +24,23 @@ const METODOS = [
 export default function Ventas() {
   const toast = useToast();
 
+  const {
+    carrito,
+    metodoPago,
+    clienteSeleccionado,
+    setMetodoPago,
+    setClienteSeleccionado,
+    agregarProducto: agregarProductoAlCarrito,
+    cambiarCantidad,
+    quitarDelCarrito,
+    vaciarCarrito,
+  } = useCarrito();
+
   const [busquedaProducto, setBusquedaProducto] = useState("");
   const [resultadosProducto, setResultadosProducto] = useState([]);
-  const [carrito, setCarrito] = useState([]);
-  const [metodoPago, setMetodoPago] = useState("CONTADO");
 
   const [busquedaCliente, setBusquedaCliente] = useState("");
   const [resultadosCliente, setResultadosCliente] = useState([]);
-  const [clienteSeleccionado, setClienteSeleccionado] = useState(null);
   const [sheetNuevoCliente, setSheetNuevoCliente] = useState(false);
   const [guardandoCliente, setGuardandoCliente] = useState(false);
 
@@ -86,35 +96,9 @@ export default function Ventas() {
   }, [busquedaCliente]);
 
   function agregarProducto(p) {
-    setCarrito((c) => {
-      const existe = c.find((it) => it.productoId === p.id);
-      if (existe) {
-        const paso = p.unidadMetrica === "KILOGRAMO" ? 0.1 : 1;
-        return c.map((it) =>
-          it.productoId === p.id ? { ...it, cantidad: Math.round((it.cantidad + paso) * 100) / 100 } : it
-        );
-      }
-      return [
-        ...c,
-        {
-          productoId: p.id,
-          nombre: p.nombre,
-          precioVenta: Number(p.precioVenta),
-          unidadMetrica: p.unidadMetrica,
-          cantidad: p.unidadMetrica === "KILOGRAMO" ? 0.1 : 1,
-        },
-      ];
-    });
+    agregarProductoAlCarrito(p);
     setBusquedaProducto("");
     setResultadosProducto([]);
-  }
-
-  function cambiarCantidad(productoId, cantidad) {
-    setCarrito((c) => c.map((it) => (it.productoId === productoId ? { ...it, cantidad } : it)));
-  }
-
-  function quitarDelCarrito(productoId) {
-    setCarrito((c) => c.filter((it) => it.productoId !== productoId));
   }
 
   function seleccionarCliente(c) {
@@ -152,9 +136,7 @@ export default function Ventas() {
       if (respuesta.excedeLimiteFiado) {
         toast.error(respuesta.mensajeAdvertencia || "El cliente superó su límite de fiado");
       }
-      setCarrito([]);
-      setMetodoPago("CONTADO");
-      setClienteSeleccionado(null);
+      vaciarCarrito();
       cargarVentas();
     } catch (err) {
       toast.error(extraerMensajeError(err));
